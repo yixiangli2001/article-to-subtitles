@@ -7,7 +7,7 @@ softPuncs = ["，", "、"]  # replace with " "
 removePatterns = [
     r'（[^）]*）',
     r'【[^】]*】',
-    r'https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)'
+    r'https?:\/\/(www\.)?[-a-zA-Z0-9@:%._,\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%,_\+.~#?&//=]*)'
 
 ]
 
@@ -18,7 +18,7 @@ def main():
     try:
         with open("article.txt", "r") as file:
             article = file.read()
-            article = cc.convert(article)
+            article = cc.convert(article)  # convert to traditional chinese
 
             for p in removePatterns:
                 article = deletePatterns(article, p)
