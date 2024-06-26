@@ -4,14 +4,14 @@ import re
 
 hardPuncs = ["。", "！", "？", "；", "……", "：", "～"]  # replace with "\n"
 softPuncs = ["，", "、"]  # replace with " "
-removePatterns = [
+removePatterns = [  # remove notes and urls
     r'（[^）]*）',
     r'【[^】]*】',
     r'https?:\/\/(www\.)?[-a-zA-Z0-9@:%._,\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%,_\+.~#?&//=]*)'
 
 ]
 
-cc = OpenCC('s2tw')
+cc = OpenCC('s2tw')  # set character converting type
 
 
 def main():
